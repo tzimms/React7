@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import FormFilm from './FormFilm.jsx'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        < FormFilm/>
       </header>
     </div>
   );
