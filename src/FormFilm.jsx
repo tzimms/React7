@@ -5,8 +5,8 @@ class FormFilm extends Component {
 constructor(props) {
     super(props);
     this.state = {
-      filmname: '',
-      posterUrl: '',
+      title: '',
+      poster: '',
       comment: '',
     } 
     this.onChange = this.onChange.bind(this);
@@ -21,14 +21,14 @@ constructor(props) {
           },
           body: JSON.stringify(this.state),
         };
-        const url = " https://post-a-form.herokuapp.com/api/movies/";
+        const url = "https://post-a-form.herokuapp.com/api/movies/";
         fetch(url, config)
       .then(res => res.json())
         .then(res => {
           if (res.error) {
             alert(res.error);
           } else {
-            alert(`Added Film ${res}!`);
+            alert(`Film Added ${res}!`);
           }
         }).catch(e => {
           console.error(e);
@@ -51,24 +51,24 @@ constructor(props) {
           <fieldset>
             <legend>Information</legend>
             <div className="form-data">
-              <label htmlFor="filmname">Name of Film</label>
+              <label htmlFor="title">Name of Film</label>
               <input
                 type="text"
-                id="filmname"
-                name="filmname"
+                id="title"
+                name="title"
                 onChange={this.onChange}
-                value={this.state.filmname}
+                value={this.state.title}
               />
             </div>
     
             <div className="form-data">
-              <label htmlFor="posterUrl">Poster Url</label>
+              <label htmlFor="poster">Poster Url</label>
               <input
                 type="text"
-                id="posterUrl"
-                name="posterUrl"
+                id="poster"
+                name="poster"
                 onChange={this.onChange}
-                value={this.state.posterUrl}
+                value={this.state.poster}
               />
             </div>
     
